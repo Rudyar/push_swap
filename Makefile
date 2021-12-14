@@ -6,7 +6,7 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2021/12/14 16:29:37 by arudy            ###   ########.fr        #
+#    Updated: 2021/12/14 17:56:22 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,7 @@ OBJS = ${SRCS:.c=.o}
 
 NAME = push_swap
 
-LIBFT = ./libft
-
-OBJS_LIBFT = ${LIBFT:.c=.o}
+LIBFT = libft/libft.a
 
 CC = gcc
 
@@ -26,19 +24,21 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-${NAME}:	${OBJS}
-			make -C ${LIBFT}
-			${NAME} ${OBJS} ${LIBFT}
-
 all:	${NAME}
+
+${NAME}:	${OBJS}
+			make -C libft
+			${NAME} ${OBJS} ${LIBFT}
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-		${RM} ${OBJS} ${OBJS_LIBFT}
+		make -C libft clean
+		${RM} ${OBJS}
 
 fclean: clean
+		make -C libft clean
 		${RM} ${NAME}
 
 re: fclean all
