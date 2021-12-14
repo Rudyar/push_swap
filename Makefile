@@ -6,11 +6,11 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2021/12/14 17:56:22 by arudy            ###   ########.fr        #
+#    Updated: 2021/12/14 20:32:29 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c
+SRCS = push_swap.c srcs/ft_check_input.c 
 
 OBJS = ${SRCS:.c=.o}
 
@@ -27,19 +27,19 @@ CFLAGS = -Wall -Wextra -Werror
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-			make -C libft
-			${NAME} ${OBJS} ${LIBFT}
+			@make -C libft
+			@${CC} ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT}
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-		make -C libft clean
+		@make -C libft clean
 		${RM} ${OBJS}
 
-fclean: clean
-		make -C libft clean
-		${RM} ${NAME}
+fclean:		clean
+			${RM} ${NAME}
+			${RM} ${LIBFT}
 
 re: fclean all
 
