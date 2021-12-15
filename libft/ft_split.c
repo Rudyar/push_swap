@@ -6,13 +6,13 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:58:42 by arudy             #+#    #+#             */
-/*   Updated: 2021/11/30 11:06:59 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/15 15:02:52 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free(char **strs)
+void	ft_free(char **strs)
 {
 	int	i;
 
