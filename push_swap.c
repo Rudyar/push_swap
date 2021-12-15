@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 11:04:09 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/15 12:08:26 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
-	if (!(ft_check_input(ac, av)))
+	if (ft_check_input(ac, av))
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
+	ft_putstr_fd("Input Ok\n", 1);
 	return (0);
 }
