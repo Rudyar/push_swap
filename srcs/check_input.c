@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_input.c                                   :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 15:13:49 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/15 16:38:04 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_first_check(char *s)
+int	first_check(char *s)
 {
 	int	i;
 
@@ -22,10 +22,10 @@ int	ft_first_check(char *s)
 	while (s && s[i])
 	{
 		if (ft_isdigit(s[i]) && s[i] != ' ' && s[i] != '+' && s[i] != '-')
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 char	**ft_strjoin_strs(char **s1, char **s2)
@@ -40,7 +40,7 @@ char	**ft_strjoin_strs(char **s1, char **s2)
 	if (!s1 || !s2)
 		return (NULL);
 	dst = NULL;
-	total_len = ft_tab_size(s1) + ft_tab_size(s2);
+	total_len = tab_size(s1) + tab_size(s2);
 	dst = malloc(sizeof(char *) * (total_len + 1));
 	if (!dst)
 		return (NULL);
@@ -57,7 +57,7 @@ char	**ft_strjoin_strs(char **s1, char **s2)
 	return (dst);
 }
 
-int	ft_check_input(int ac, char **av)
+int	check_input(int ac, char **av)
 {
 	int		i;
 	char	**input_splited;
@@ -65,21 +65,17 @@ int	ft_check_input(int ac, char **av)
 	i = 1;
 	input_splited = malloc(sizeof(char *) * 1);
 	if (!input_splited)
-		return (1);
+		return (0);
 	input_splited[0] = NULL;
 	while (i < ac)
 	{
-		if (ft_first_check(av[i]))
-			return (1);
+		if (!(first_check(av[i])))
+			return (0);
 		input_splited = ft_strjoin_strs(input_splited, ft_split(av[i], ' '));
 		i++;
 	}
-	i = 0;
-	while (input_splited[i] != NULL)
-	{
-		printf("%s\n", input_splited[i]);
-		i++;
-	}
-	// ft_free(input_splited);
-	return (0);
+	if (!(create_ll_tab(input_splited)))
+		return (0);
+	ft_free(input_splited);
+	return (1);
 }

@@ -6,11 +6,12 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2021/12/15 15:06:55 by arudy            ###   ########.fr        #
+#    Updated: 2021/12/15 15:48:24 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = push_swap.c srcs/ft_check_input.c srcs/ft_check_input_utils.c
+SRCS = push_swap.c srcs/check_input.c srcs/check_input_utils.c srcs/create_ll_tab.c \
+		
 
 OBJS = ${SRCS:.c=.o}
 
