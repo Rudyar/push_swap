@@ -6,12 +6,12 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2021/12/15 15:48:24 by arudy            ###   ########.fr        #
+#    Updated: 2021/12/15 17:40:24 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = push_swap.c srcs/check_input.c srcs/check_input_utils.c srcs/create_ll_tab.c \
-		
+
 
 OBJS = ${SRCS:.c=.o}
 
@@ -36,7 +36,7 @@ ${NAME}:	${OBJS}
 
 valgrind:	${OBJS}
 			@make -C libft
-			@${CC} -g3 ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT}
+			@${CC} ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT} -g3
 
 clean:
 		@make -C libft clean

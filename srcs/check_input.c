@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 16:38:04 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/15 17:55:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ char	**ft_strjoin_strs(char **s1, char **s2)
 
 int	check_input(int ac, char **av)
 {
-	int		i;
-	char	**input_splited;
+	int			i;
+	char		**input_splited;
+	long long	*tab;
 
 	i = 1;
 	input_splited = malloc(sizeof(char *) * 1);
@@ -74,8 +75,10 @@ int	check_input(int ac, char **av)
 		input_splited = ft_strjoin_strs(input_splited, ft_split(av[i], ' '));
 		i++;
 	}
-	if (!(create_ll_tab(input_splited)))
+	tab = create_ll_tab(input_splited);
+	if (!tab)
 		return (0);
+	// free(tab);
 	ft_free(input_splited);
 	return (1);
 }
