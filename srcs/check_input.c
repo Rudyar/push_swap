@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 17:55:07 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 08:17:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,28 +57,45 @@ char	**ft_strjoin_strs(char **s1, char **s2)
 	return (dst);
 }
 
-int	check_input(int ac, char **av)
+char	**split_input(int ac, char **av)
 {
 	int			i;
 	char		**input_splited;
-	long long	*tab;
 
 	i = 1;
 	input_splited = malloc(sizeof(char *) * 1);
 	if (!input_splited)
-		return (0);
+		return (NULL);
 	input_splited[0] = NULL;
 	while (i < ac)
 	{
 		if (!(first_check(av[i])))
-			return (0);
+			return (NULL);
 		input_splited = ft_strjoin_strs(input_splited, ft_split(av[i], ' '));
 		i++;
 	}
-	tab = create_ll_tab(input_splited);
+	return (input_splited);
+}
+
+int	check_input(int ac, char **av)
+{
+	char		**input_splited;
+	long long	*ll_tab;
+	int			*tab;
+	int			size;
+
+	if (ac < 2)
+		return (0);
+	input_splited = split_input(ac, av);
+	if (!input_splited)
+		return (0);
+	size = tab_size(input_splited);
+	ll_tab = create_ll_tab(input_splited);
+	if (!ll_tab)
+		return (0);
+	ft_free(input_splited);
+	tab = create_tab(ll_tab, size);
 	if (!tab)
 		return (0);
-	// free(tab);
-	ft_free(input_splited);
 	return (1);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 15:42:48 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 08:18:54 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 int	main(int ac, char **av)
 {
-	if (ac < 2)
+	int	*tab;
+
+	tab = check_input(ac, av);
+	if (!tab)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
-	if (!(check_input(ac, av)))
-	{
-		ft_putstr_fd("Error\n", 1);
-		return (0);
-	}
-	ft_putstr_fd("Input Ok\n", 1);
+	// ft_putstr_fd("Input Ok\n", 1);
 	return (0);
 }
