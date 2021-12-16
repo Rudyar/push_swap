@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/15 15:24:58 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 21:08:29 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,15 @@ int	tab_size(char **tab)
 	while (tab[i] != NULL)
 		i++;
 	return (i);
+}
+
+t_tab	*init_tab(void)
+{
+	t_tab	*tab;
+
+	tab = malloc(sizeof(*tab));
+	if (!tab)
+		return (0);
+	tab->size = 0;
+	return (tab);
 }

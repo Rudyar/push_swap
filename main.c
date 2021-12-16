@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/16 08:54:47 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 21:05:39 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	int	*tab;
+	t_tab	*tab;
 
 	tab = check_input(ac, av);
 	if (!tab)
