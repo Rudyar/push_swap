@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/16 08:18:54 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 08:54:47 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
-	// ft_putstr_fd("Input Ok\n", 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/16 08:17:34 by arudy            ###   ########.fr       */
+/*   Updated: 2021/12/16 08:36:16 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	**split_input(int ac, char **av)
 	return (input_splited);
 }
 
-int	check_input(int ac, char **av)
+int	*check_input(int ac, char **av)
 {
 	char		**input_splited;
 	long long	*ll_tab;
@@ -97,5 +97,5 @@ int	check_input(int ac, char **av)
 	tab = create_tab(ll_tab, size);
 	if (!tab)
 		return (0);
-	return (1);
+	return (tab);
 }
