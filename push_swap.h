@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/27 19:02:37 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/03 11:20:55 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,13 @@ typedef struct s_stack
 
 t_tab		*check_input(int ac, char **av);
 t_tab		*init_tab(void);
-t_stack		*init_lst(void);
-t_stack		*init_lst(void);
 t_stack		*create_lst(t_tab *tab);
 int			tab_size(char **tab);
 int			tab_is_sorted(t_tab *tab);
 int			*create_tab(long long *ll_tab, int size);
 int			ft_putstr(char *s);
 void		ft_free(char **strs);
+void		print_lst(t_stack *alst);
 long long	*create_ll_tab(char **src);
 
 #endif

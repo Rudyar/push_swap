@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/16 21:08:54 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/03 11:48:17 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ t_tab	*check_input(int ac, char **av)
 	long long	*ll_tab;
 	t_tab		*tab;
 
-	if (ac < 2)
-		return (0);
 	input_splited = split_input(ac, av);
 	if (!input_splited)
 		return (0);

@@ -6,14 +6,14 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2021/12/27 19:47:00 by arudy            ###   ########.fr        #
+#    Updated: 2022/01/03 09:30:36 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c srcs/check_input.c \
 		srcs/check_input_utils.c srcs/create_ll_tab.c \
 		srcs/create_tab.c srcs/tab_is_sorted.c srcs/create_lst.c \
-		
+
 
 OBJS = ${SRCS:.c=.o}
 
@@ -38,7 +38,7 @@ ${NAME}:	${OBJS}
 
 valgrind:	${OBJS}
 			@make -C libft
-			@${CC} ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT} -g3
+			@${CC} -g3 ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT}
 
 clean:
 		@make -C libft clean
