@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 15:34:39 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/03 15:44:21 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int	main(int ac, char **av)
 	sa(a);
 	sb(b);
 	print_both_lst(a, b);
+	ft_putstr("-------\n");
+	ss(a, b);
+	print_both_lst(a, b);
+	ft_putstr("-------\n");
 	return (0);
 }

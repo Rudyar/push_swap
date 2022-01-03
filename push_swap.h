@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 15:10:20 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/03 15:43:59 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void		print_lst(t_stack *alst);
 void		print_both_lst(t_stack *a, t_stack *b);
 int			sa(t_stack *a);
 int			sb(t_stack *b);
+int			ss(t_stack *a, t_stack *b);
 long long	*create_ll_tab(char **src);
 
 #endif
