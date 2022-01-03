@@ -6,24 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 11:59:38 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/03 15:03:42 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	print_lst(t_stack *alst)
-{
-	while (alst->next != NULL)
-	{
-		ft_putnbr_fd(alst->content, 1);
-		ft_putchar_fd('\n', 1);
-		if (alst->next != NULL)
-			alst = alst->next;
-		else
-			break ;
-	}
-}
 
 t_stack	*ft_lst_new(int content, void *prev)
 {

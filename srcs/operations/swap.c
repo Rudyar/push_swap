@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 15:34:39 by arudy            ###   ########.fr       */
+/*   Created: 2022/01/03 14:04:35 by arudy             #+#    #+#             */
+/*   Updated: 2022/01/03 14:58:18 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+# include "../../push_swap.h"
 
-int	main(int ac, char **av)
+int	swap(t_stack *lst)
 {
-	t_tab	*tab;
-	t_stack	*a;
-	t_stack	*b;
+	int	tmp;
 
-	if (ac < 3)
-		return (0);
-	tab = check_input(ac, av);
-	if (!tab)
-		return (ft_putstr("Error\n"));
-	if (tab_is_sorted(tab))
-		return (ft_putstr("Input is already sorted\n"));
-	a = create_lst(tab);
-	b = create_lst(tab);
-	print_both_lst(a, b);
-	ft_putstr("-------\n");
-	sa(a);
-	sb(b);
-	print_both_lst(a, b);
+	if (lst && lst->next != NULL)
+	{
+		tmp = lst->content;
+		lst->content = lst->next->content;
+		lst->next->content = tmp;
+		return (1);
+
+	}
 	return (0);
+}
+
+int	sa(t_stack *a)
+{
+	if (!swap(a))
+		return (0);
+	ft_putstr("sa\n");
+	return (1);
+}
+
+int	sb(t_stack *b)
+{
+	if (!swap(b))
+		return (0);
+	ft_putstr("sb\n");
+	return (1);
 }
