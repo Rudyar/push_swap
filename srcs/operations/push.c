@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 17:23:11 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 19:32:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 22:04:03 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	pb(t_stack **src, t_stack **dst)
 			push_lst(src, dst);
 		else
 			push_no_lst(src, dst);
-		ft_putstr("pb\n");
+		ft_putstr_fd("pb\n", 1);
 	}
 }
 
@@ -65,6 +65,6 @@ void	pa(t_stack **src, t_stack **dst)
 			push_lst(src, dst);
 		else
 			push_no_lst(src, dst);
-		ft_putstr("pa\n");
+		ft_putstr_fd("pa\n", 1);
 	}
 }

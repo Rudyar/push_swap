@@ -6,13 +6,13 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 19:59:01 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 22:01:45 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_putstr(char *s)
+int	ft_putstr_error(char *s)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ int	ft_putstr(char *s)
 	{
 		while (s[i])
 		{
-			ft_putchar_fd(s[i], 1);
+			ft_putchar_fd(s[i], 2);
 			i++;
 		}
 	}
@@ -36,19 +36,6 @@ int	tab_size(char **tab)
 	while (tab[i] != NULL)
 		i++;
 	return (i);
-}
-
-void	free_tab(t_tab **tab)
-{
-	int	i;
-
-	i = 0;
-	while (i <= (*tab)->size)
-	{
-		free(*tab);
-		i++;
-		// Creer un next dans la struct pour free !!
-	}
 }
 
 t_tab	*init_tab(void)

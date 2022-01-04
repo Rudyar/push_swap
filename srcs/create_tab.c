@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 07:28:41 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 11:18:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 21:39:08 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	*create_tab(long long *ll_tab, int size)
 	i = 0;
 	if (!(check_double(ll_tab, size)) || !(is_not_int(ll_tab, size)))
 		return (0);
-	tab = malloc(sizeof(int *) * size);
+	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (0);
 	while (i < size)

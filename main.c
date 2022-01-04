@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 19:55:09 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 22:05:03 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int ac, char **av)
 		return (0);
 	tab = check_input(ac, av);
 	if (!tab)
-		return (ft_putstr("Error\n"));
+		return (ft_putstr_error("Error\n"));
 	if (tab_is_sorted(tab))
-		return (ft_putstr("Input is already sorted\n"));
+		return (0);
 	a = create_lst(tab);
 	b = create_lst(tab);
 	print_lst(&a, &b);
@@ -43,7 +43,8 @@ int	main(int ac, char **av)
 	pa(&b, &a);
 	pa(&b, &a);
 	print_lst(&a, &b);
-	free_tab(&tab);
+	free(tab->tab);
+	free(tab);
 	free_lst(&a);
 	free_lst(&b);
 	return (0);

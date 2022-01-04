@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 19:54:15 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 21:56:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,37 +52,36 @@ void	free_lst(t_stack **lst)
 		*lst = (*lst)->next;
 		free(tmp);
 	}
-
 }
 
-void    print_lst(t_stack **stack_a, t_stack **stack_b)
+void	print_lst(t_stack **a, t_stack **b)
 {
-    t_stack    **tmp;
-    t_stack    **tmp2;
+	t_stack	**tmp;
+	t_stack	**tmp2;
 
-    tmp = stack_a;
-    tmp2 = stack_b;
-    printf("\n---------\n");
-    printf("| a | b |\n");
-    printf("---------\n");
-    while ((*tmp) != NULL || (*tmp2) != NULL)
-    {
-        if ((*tmp))
-        {
-            printf("| %d", (*tmp)->content);
-            tmp = &(*tmp)->next;
-        }
-        else
-            printf("|  ");
-        printf(" | ");
-        if ((*tmp2))
-        {
-            printf("%d |", (*tmp2)->content);
-            tmp2 = &(*tmp2)->next;
-        }
-        else
-            printf("  |");
-        printf("\n");
-    }
-    printf("---------\n\n");
+	tmp = a;
+	tmp2 = b;
+	printf("\n---------\n");
+	printf("| a | b |\n");
+	printf("---------\n");
+	while (*tmp != NULL || *tmp2 != NULL)
+	{
+		if (*tmp)
+		{
+			printf("| %d", (*tmp)->content);
+			tmp = &(*tmp)->next;
+		}
+		else
+			printf("|  ");
+		printf(" | ");
+		if (*tmp2)
+		{
+			printf("%d |", (*tmp2)->content);
+			tmp2 = &(*tmp2)->next;
+		}
+		else
+			printf("  |");
+		printf("\n");
+	}
+	printf("---------\n\n");
 }

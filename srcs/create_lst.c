@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 19:31:07 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 21:47:39 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,12 @@ void	ft_lst_add_back(t_stack **alst, t_stack *new)
 t_stack	*create_lst(t_tab *tab)
 {
 	t_stack	*lst;
-	// t_stack	*tmp;
 	t_stack	*start;
 	int		i;
 
 	i = 1;
 	lst = ft_lst_new(tab->tab[0], NULL);
 	start = lst;
-	// tmp = NULL;
 	while (i < tab->size)
 	{
 		if (i == 1)
@@ -66,7 +64,6 @@ t_stack	*create_lst(t_tab *tab)
 		else
 			lst = ft_lst_new(tab->tab[i], lst);
 		ft_lst_add_back(&start, lst);
-		// tmp = lst->next;
 		i++;
 	}
 	return (start);
