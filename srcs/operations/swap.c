@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:04:35 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/03 15:46:57 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 18:55:10 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,23 @@ int	swap(t_stack *lst)
 	return (0);
 }
 
-int	sa(t_stack *a)
+void	sa(t_stack *a)
 {
 	if (!swap(a))
-		return (0);
+		return ;
 	ft_putstr("sa\n");
-	return (1);
 }
 
-int	sb(t_stack *b)
+void	sb(t_stack *b)
 {
 	if (!swap(b))
-		return (0);
+		return ;
 	ft_putstr("sb\n");
-	return (1);
 }
 
-int	ss(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b)
 {
 	if (!swap(a) || !swap(b))
-		return (0);
+		return ;
 	ft_putstr("ss\n");
-	return (1);
 }

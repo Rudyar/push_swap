@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/18 17:32:06 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/04 19:59:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,19 @@ int	tab_size(char **tab)
 	while (tab[i] != NULL)
 		i++;
 	return (i);
+}
+
+void	free_tab(t_tab **tab)
+{
+	int	i;
+
+	i = 0;
+	while (i <= (*tab)->size)
+	{
+		free(*tab);
+		i++;
+		// Creer un next dans la struct pour free !!
+	}
 }
 
 t_tab	*init_tab(void)
