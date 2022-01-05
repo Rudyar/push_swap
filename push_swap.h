@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 12:30:40 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 15:27:18 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void		pb(t_stack **a, t_stack **b);
 void		ra(t_stack **lst);
 void		rb(t_stack **lst);
 void		rr(t_stack **a, t_stack **b);
+void		rra(t_stack **lst);
+void		rrb(t_stack **lst);
+void		rrr(t_stack **a, t_stack **b);
 long long	*create_ll_tab(char **src);
 
 #endif

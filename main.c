@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 12:49:05 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 15:37:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	if (tab_is_sorted(tab))
 		return (0);
 	a = create_lst(tab);
-	b = NULL;
+	b = create_lst(tab);
 	print_lst(&a, &b);
 	// sa(a);
 	// print_lst(&a, &b);
@@ -43,11 +43,11 @@ int	main(int ac, char **av)
 	// pa(&b, &a);
 	// pa(&b, &a);
 	// print_lst(&a, &b);
-	ra(&a);
+	rra(&a);
 	print_lst(&a, &b);
-	rb(&b);
+	rrb(&b);
 	print_lst(&a, &b);
-	rr(&a, &b);
+	rrr(&a, &b);
 	print_lst(&a, &b);
 	free(tab->tab);
 	free(tab);
