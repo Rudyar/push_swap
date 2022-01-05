@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 21:47:39 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 12:25:41 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@ t_stack	*ft_lst_new(int content, void *prev)
 	new->prev = prev;
 	new->next = NULL;
 	return (new);
-}
-
-t_stack	*ft_lst_last(t_stack *lst)
-{
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
 }
 
 void	ft_lst_add_back(t_stack **alst, t_stack *new)

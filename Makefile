@@ -6,7 +6,7 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2022/01/03 17:35:42 by arudy            ###   ########.fr        #
+#    Updated: 2022/01/05 11:12:21 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ SRCS = main.c srcs/check_input.c \
 		srcs/check_input_utils.c srcs/create_ll_tab.c \
 		srcs/create_tab.c srcs/tab_is_sorted.c srcs/create_lst.c \
 		srcs/lst_utils.c srcs/operations/swap.c srcs/operations/push.c \
+		srcs/operations/rotate.c 
 
 OBJS = ${SRCS:.c=.o}
 

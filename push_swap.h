@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 22:02:13 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 12:30:40 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 t_tab		*check_input(int ac, char **av);
 t_tab		*init_tab(void);
 t_stack		*create_lst(t_tab *tab);
+t_stack		*ft_lst_last(t_stack *lst);
 int			tab_size(char **tab);
 int			tab_is_sorted(t_tab *tab);
 int			*create_tab(long long *ll_tab, int size);
@@ -44,6 +45,9 @@ void		sb(t_stack *b);
 void		ss(t_stack *a, t_stack *b);
 void		pa(t_stack **a, t_stack **b);
 void		pb(t_stack **a, t_stack **b);
+void		ra(t_stack **lst);
+void		rb(t_stack **lst);
+void		rr(t_stack **a, t_stack **b);
 long long	*create_ll_tab(char **src);
 
 #endif

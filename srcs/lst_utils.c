@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 21:56:15 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 12:25:55 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ void	free_lst(t_stack **lst)
 		*lst = (*lst)->next;
 		free(tmp);
 	}
+}
+
+t_stack	*ft_lst_last(t_stack *lst)
+{
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 void	print_lst(t_stack **a, t_stack **b)

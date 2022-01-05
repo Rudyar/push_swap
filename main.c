@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 22:05:03 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 12:49:05 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,28 @@ int	main(int ac, char **av)
 	if (tab_is_sorted(tab))
 		return (0);
 	a = create_lst(tab);
-	b = create_lst(tab);
+	b = NULL;
 	print_lst(&a, &b);
-	sa(a);
+	// sa(a);
+	// print_lst(&a, &b);
+	// sb(b);
+	// print_lst(&a, &b);
+	// pb(&a, &b);
+	// print_lst(&a, &b);
+	// pb(&a, &b);
+	// pb(&a, &b);
+	// print_lst(&a, &b);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// print_lst(&a, &b);
+	// pa(&b, &a);
+	// pa(&b, &a);
+	// print_lst(&a, &b);
+	ra(&a);
 	print_lst(&a, &b);
-	sb(b);
+	rb(&b);
 	print_lst(&a, &b);
-	pb(&a, &b);
-	print_lst(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	print_lst(&a, &b);
-	pa(&b, &a);
-	pa(&b, &a);
-	print_lst(&a, &b);
-	pa(&b, &a);
-	pa(&b, &a);
+	rr(&a, &b);
 	print_lst(&a, &b);
 	free(tab->tab);
 	free(tab);
