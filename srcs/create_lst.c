@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 12:25:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 16:01:20 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_stack	*ft_lst_new(int content, void *prev)
 	new->content = content;
 	new->prev = prev;
 	new->next = NULL;
+	new->index = -1;
 	return (new);
 }
 
@@ -59,5 +60,6 @@ t_stack	*create_lst(t_tab *tab)
 		ft_lst_add_back(&start, lst);
 		i++;
 	}
+	sort_index_lst(&start, tab->size - 1);
 	return (start);
 }

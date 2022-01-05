@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 15:27:18 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 17:50:59 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,15 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	int				content;
+	int				index;
 }t_stack;
 
 t_tab		*check_input(int ac, char **av);
 t_tab		*init_tab(void);
 t_stack		*create_lst(t_tab *tab);
 t_stack		*ft_lst_last(t_stack *lst);
+t_stack		*find_highest(t_stack **lst, int max);
+t_stack		*find_smallest(t_stack **lst);
 int			tab_size(char **tab);
 int			tab_is_sorted(t_tab *tab);
 int			*create_tab(long long *ll_tab, int size);
@@ -40,6 +43,7 @@ int			ft_putstr_error(char *s);
 void		ft_free(char **strs);
 void		free_lst(t_stack **lst);
 void		print_lst(t_stack **a, t_stack **b);
+void		sort_index_lst(t_stack **lst, int max);
 void		sa(t_stack *a);
 void		sb(t_stack *b);
 void		ss(t_stack *a, t_stack *b);

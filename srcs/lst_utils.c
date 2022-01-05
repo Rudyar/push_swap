@@ -6,41 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 12:25:55 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/05 17:50:28 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// void	print_both_lst(t_stack *a, t_stack *b)
-// {
-// 	printf("a  |  b\n");
-// 	printf("-------\n");
-// 	while (a != NULL && b != NULL)
-// 	{
-// 		printf("%d  |  %d\n", a->content, b->content);
-// 		if (a->next != NULL)
-// 			a = a->next;
-// 		if (b->next != NULL)
-// 			b = b->next;
-// 		if (a->next == NULL || b->next == NULL)
-// 			break ;
-// 	}
-// 	while (a != NULL)
-// 	{
-// 		printf("%d  |  \n", a->content);
-// 		if (a->next == NULL)
-// 			break ;
-// 		a = a->next;
-// 	}
-// 	while (b != NULL)
-// 	{
-// 		printf("  |  %d\n", b->content);
-// 		if (b->next == NULL)
-// 			break ;
-// 		b = b->next;
-// 	}
-// }
 
 void	free_lst(t_stack **lst)
 {
@@ -61,6 +31,52 @@ t_stack	*ft_lst_last(t_stack *lst)
 	return (lst);
 }
 
+t_stack	*find_highest(t_stack **lst, int max)
+{
+	t_stack	*tmp;
+	t_stack	*first;
+	int		highest;
+
+	highest = (*lst)->content;
+	tmp = *lst;
+	first = *lst;
+	while (*lst)
+	{
+		if ((*lst)->content > highest)
+		{
+			highest = (*lst)->content;
+			tmp = *lst;
+		}
+		*lst = (*lst)->next;
+	}
+	tmp->index = max;
+	*lst = first;
+	return (tmp);
+}
+
+t_stack	*find_smallest(t_stack **lst)
+{
+	t_stack	*tmp;
+	t_stack	*first;
+	int		smallest;
+
+	smallest = (*lst)->content;
+	tmp = *lst;
+	first = *lst;
+	while (*lst)
+	{
+		if ((*lst)->content < smallest)
+		{
+			smallest = (*lst)->content;
+			tmp = *lst;
+		}
+		*lst = (*lst)->next;
+	}
+	tmp->index = 0;
+	*lst = first;
+	return (tmp);
+}
+
 void	print_lst(t_stack **a, t_stack **b)
 {
 	t_stack	**tmp;
@@ -68,14 +84,14 @@ void	print_lst(t_stack **a, t_stack **b)
 
 	tmp = a;
 	tmp2 = b;
-	printf("\n---------\n");
-	printf("| a | b |\n");
-	printf("---------\n");
+	printf("\n-----------------\n");
+	printf("|    a   |    b   |\n");
+	printf("-------------------\n");
 	while (*tmp != NULL || *tmp2 != NULL)
 	{
 		if (*tmp)
 		{
-			printf("| %d", (*tmp)->content);
+			printf("| %d (%d)", (*tmp)->content, (*tmp)->index);
 			tmp = &(*tmp)->next;
 		}
 		else
@@ -83,7 +99,7 @@ void	print_lst(t_stack **a, t_stack **b)
 		printf(" | ");
 		if (*tmp2)
 		{
-			printf("%d |", (*tmp2)->content);
+			printf("%d (%d) |", (*tmp2)->content, (*tmp2)->index);
 			tmp2 = &(*tmp2)->next;
 		}
 		else
