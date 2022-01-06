@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 17:50:28 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 10:05:25 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,30 +77,30 @@ t_stack	*find_smallest(t_stack **lst)
 	return (tmp);
 }
 
-void	print_lst(t_stack **a, t_stack **b)
+void	print_lst(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	**tmp;
-	t_stack	**tmp2;
+	t_stack	**a;
+	t_stack	**b;
 
-	tmp = a;
-	tmp2 = b;
+	a = stack_a;
+	b = stack_b;
 	printf("\n-----------------\n");
 	printf("|    a   |    b   |\n");
 	printf("-------------------\n");
-	while (*tmp != NULL || *tmp2 != NULL)
+	while (*a != NULL || *b != NULL)
 	{
-		if (*tmp)
+		if (*a)
 		{
-			printf("| %d (%d)", (*tmp)->content, (*tmp)->index);
-			tmp = &(*tmp)->next;
+			printf("| %d (%d)", (*a)->content, (*a)->index);
+			a = &(*a)->next;
 		}
 		else
 			printf("|  ");
 		printf(" | ");
-		if (*tmp2)
+		if (*b)
 		{
-			printf("%d (%d) |", (*tmp2)->content, (*tmp2)->index);
-			tmp2 = &(*tmp2)->next;
+			printf("%d (%d) |", (*b)->content, (*b)->index);
+			b = &(*b)->next;
 		}
 		else
 			printf("  |");

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:51:16 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/05 19:05:24 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 10:58:14 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,46 +26,45 @@ int	index_sorted(t_stack **lst)
 int	find_next(t_stack **lst, int highest, int current)
 {
 	int		next;
+	t_stack	*first;
 
 	next = highest;
+	first = *lst;
 	while (*lst)
 	{
 		if ((*lst)->content < next && (*lst)->content > current)
 			next = (*lst)->content;
 		*lst = (*lst)->next;
 	}
+	*lst = first;
 	return (next);
 }
 
-void	put_index(t_stack **lst, t_stack *highest, t_stack *smallest)
+void	put_index(t_stack **lst, t_stack *highest)
 {
 	t_stack	*first;
 	int		i;
 	int		next;
 
 	first = *lst;
-	i = 1;
-	next = smallest->index;
+	i = 0;
+	next = 0;
 	while (!index_sorted(lst))
 	{
 		next = find_next(lst, highest->content, next);
-		printf("content : %d\n", (*lst)->content);
 		while ((*lst)->content != next)
-		{
 			*lst = (*lst)->next;
-		}
 		(*lst)->index = i;
 		*lst = first;
 		i++;
 	}
+	*lst = first;
 }
 
 void	sort_index_lst(t_stack **lst, int max)
 {
 	t_stack *highest;
-	t_stack *smallest;
 
 	highest = find_highest(lst, max);
-	smallest = find_smallest(lst);
-	put_index(lst, highest, smallest);
+	put_index(lst, highest);
 }
