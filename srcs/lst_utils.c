@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 11:14:01 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 12:18:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_stack	*find_smallest(t_stack **lst)
 		}
 		*lst = (*lst)->next;
 	}
+	printf("tmp : %d\n", tmp->content);
 	tmp->index = 0;
 	*lst = first;
 	return (tmp);
