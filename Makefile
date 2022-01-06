@@ -6,7 +6,7 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2022/01/06 15:33:35 by arudy            ###   ########.fr        #
+#    Updated: 2022/01/06 21:41:42 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.c srcs/check_input.c \
 		srcs/lst_utils.c srcs/operations/swap.c srcs/operations/push.c \
 		srcs/operations/rotate.c srcs/operations/reverse_rotate.c \
 		srcs/sort_index_lst.c srcs/sort/sort_short_lst.c srcs/sort/sort_utils.c \
-		
+		srcs/sort/sort_long_lst.c
 
 OBJS = ${SRCS:.c=.o}
 
