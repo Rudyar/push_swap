@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:04:35 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 10:54:22 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 16:00:10 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 int	swap(t_stack **lst)
 {
-	t_stack	*tmp;
-	t_stack	*tmp2;
-	t_stack	*first;
+	int	tmp_content;
+	int	tmp_index;
 
-	if (*lst && (*lst)->next)
+	if (lst && (*lst)->next != NULL)
 	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		first = *lst;
-		tmp2 = (*lst)->next;
-		(*lst)->next = tmp;
-		tmp->next = tmp2;
-		*lst = first;
+		tmp_content = (*lst)->content;
+		tmp_index = (*lst)->index;
+		(*lst)->content = (*lst)->next->content;
+		(*lst)->index = (*lst)->next->index;
+		(*lst)->next->content = tmp_content;
+		(*lst)->next->index = tmp_index;
 		return (1);
 	}
 	return (0);
+
 }
 
 void	sa(t_stack **a)

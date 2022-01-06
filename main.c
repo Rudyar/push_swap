@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 12:06:49 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 16:06:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ int	main(int ac, char **av)
 		return (0);
 	a = create_lst(tab);
 	b = NULL;
-	print_lst(&a, &b);
+	// print_lst(&a, &b);
+	if (tab->size < 10)
+		sort_short_lst(&a, &b, tab->size);
+	// print_lst(&a, &b);
 	free_all(tab, &a, &b);
 	return (0);
 }

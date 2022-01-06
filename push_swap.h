@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 10:22:18 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 15:33:53 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void		rr(t_stack **a, t_stack **b);
 void		rra(t_stack **lst);
 void		rrb(t_stack **lst);
 void		rrr(t_stack **a, t_stack **b);
+void		sort_short_lst(t_stack **a, t_stack **b, int size);
+int			a_is_sorted(t_stack **a);
 long long	*create_ll_tab(char **src);
 
 #endif
