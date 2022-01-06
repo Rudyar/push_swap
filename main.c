@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 16:41:57 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 18:49:41 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ int	main(int ac, char **av)
 		return (0);
 	a = create_lst(tab);
 	b = NULL;
-	// print_lst(&a, &b);
-	// if (tab->size < 10)
+	if (tab->size < 4)
+		sort_3_lst(&a, tab->size);
+	else if (tab->size < 10)
 		sort_short_lst(&a, &b, tab->size);
+	// else
+	// 	sort_long_lst(&a, &b, tab->size);
 	print_lst(&a, &b);
 	free_all(tab, &a, &b);
 	return (0);
 }
 // Virer libft ??
-// Virer smallest ??
