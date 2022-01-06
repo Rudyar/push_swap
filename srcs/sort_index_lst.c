@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:51:16 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 10:58:14 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 11:08:15 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	put_index(t_stack **lst, t_stack *highest)
 
 void	sort_index_lst(t_stack **lst, int max)
 {
-	t_stack *highest;
+	t_stack	*highest;
 
 	highest = find_highest(lst, max);
 	put_index(lst, highest);

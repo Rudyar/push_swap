@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 10:05:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 11:14:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	print_lst(t_stack **stack_a, t_stack **stack_b)
 
 	a = stack_a;
 	b = stack_b;
-	printf("\n-----------------\n");
+	printf("\n-------------------\n");
 	printf("|    a   |    b   |\n");
 	printf("-------------------\n");
 	while (*a != NULL || *b != NULL)
@@ -106,5 +106,5 @@ void	print_lst(t_stack **stack_a, t_stack **stack_b)
 			printf("  |");
 		printf("\n");
 	}
-	printf("---------\n\n");
+	printf("-------------------\n\n");
 }
