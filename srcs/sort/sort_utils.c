@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:31:48 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 18:47:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 19:23:44 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,34 @@ int	a_is_sorted(t_stack **a)
 	return (1);
 }
 
-int	is_in_second_part(t_stack **lst, int index, int size)
+int	ft_lst_size(t_stack **lst)
 {
-	while ((*lst)->index != (size / 2 + index))
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (*lst)
+	{
+		i++;
+		lst = &(*lst)->next;
+	}
+	return (i);
+}
+
+int	is_in_second_part(t_stack **lst, int index)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = ft_lst_size(lst);
+	while (i < size / 2)
 	{
 		if ((*lst)->index == index)
 			return (0);
 		lst = &(*lst)->next;
+		i++;
 	}
 	return (1);
 }

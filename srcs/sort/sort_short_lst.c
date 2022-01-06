@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:00:00 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 18:46:42 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/06 19:22:28 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sort_short_lst(t_stack **a, t_stack **b, int size)
 		}
 		else if ((*a)->next->index == i)
 			sa(a);
-		else if (is_in_second_part(a, i, size))
+		else if (is_in_second_part(a, i))
 			rra(a);
 		else
 			ra(a);
