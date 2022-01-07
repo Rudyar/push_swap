@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 22:23:34 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 13:30:54 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void		sort_short_lst(t_stack **a, t_stack **b, int size);
 void		sort_3_lst(t_stack **a, int size);
 int			a_is_sorted(t_stack **a);
 int			is_in_second_part(t_stack **lst, int index);
+int			is_in_first_part(t_stack **lst, int start, int end);
+int			ft_lst_size(t_stack **lst);
 long long	*create_ll_tab(char **src);
 
 #endif

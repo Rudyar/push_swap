@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 22:23:13 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 13:46:45 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,10 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (tab->size < 4)
 		sort_3_lst(&a, tab->size);
-	else if (tab->size < 10)
+	else if (tab->size <= 10)
 		sort_short_lst(&a, &b, tab->size);
-	else if (tab->size <= 100)
+	else
 		sort_long_lst(&a, &b, tab->size);
-	// else
-	// 	sort_super_long_lst(&a, &b, tab->size);
 	free_all(tab, &a, &b);
 	return (0);
 }
-// Faire un chunk size en fonction de la tab.size !!
-// Virer libft ??
