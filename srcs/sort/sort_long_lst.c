@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 21:07:42 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/07 13:48:45 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 18:53:50 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	find_chunk_size(int size)
 
 	if (size <= 10)
 		chunk_size = size;
+	else if (size <= 25)
+		chunk_size = 25 / 3;
 	else if (size <= 50)
 		chunk_size = 50 / 4;
 	else if (size <= 100)
@@ -35,15 +37,30 @@ int	find_chunk_size(int size)
 	return (chunk_size);
 }
 
-void	push_in_b(t_stack **a, t_stack **b)
+t_stack	*find_smallest_index(t_stack **lst)
 {
-	int		i;
-	int		chunk_start;
-	int		chunk_end;
+	t_stack	*tmp;
+	int		smallest;
+
+	smallest = (*lst)->index;
+	tmp = *lst;
+	while (*lst)
+	{
+		if ((*lst)->index < smallest)
+		{
+			smallest = (*lst)->index;
+			tmp = *lst;
+		}
+		lst = &(*lst)->next;
+	}
+	return (tmp);
+}
+
+void	push_in_b(t_stack **a, t_stack **b, int chunk_start, int chunk_end)
+{
+	int	i;
 
 	i = 0;
-	chunk_start = 0;
-	chunk_end = find_chunk_size(ft_lst_size(a));
 	while ((*a) && !a_is_sorted(a))
 	{
 		while ((*a) && i <= chunk_end)
@@ -56,8 +73,10 @@ void	push_in_b(t_stack **a, t_stack **b)
 			else if ((*a)->next->index >= chunk_start
 				&& (*a)->next->index <= chunk_end)
 				sa(a);
-			else
+			else if (is_in_first_part(a, chunk_start, chunk_end))
 				ra(a);
+			else
+				rra(a);
 		}
 		chunk_start = chunk_end;
 		chunk_end += find_chunk_size(ft_lst_size(a));
@@ -67,8 +86,12 @@ void	push_in_b(t_stack **a, t_stack **b)
 void	sort_long_lst(t_stack **a, t_stack **b, int size)
 {
 	int	i;
+	int	chunk_start;
+	int	chunk_end;
 
-	push_in_b(a, b);
+	chunk_start = 0;
+	chunk_end = find_chunk_size(ft_lst_size(a));
+	push_in_b(a, b, chunk_start, chunk_end);
 	if ((*a))
 		i = (*a)->index - 1;
 	else

@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 18:21:18 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:11 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	ft_putstr_error(char *s)
 {

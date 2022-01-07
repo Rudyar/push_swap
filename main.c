@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/07 13:46:45 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 16:43:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
-	if (ac < 3)
+	if (ac < 2)
 		return (0);
 	tab = check_input(ac, av);
 	if (!tab)

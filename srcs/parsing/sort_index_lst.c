@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:51:16 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 12:21:42 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:44 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	index_sorted(t_stack **lst)
 {

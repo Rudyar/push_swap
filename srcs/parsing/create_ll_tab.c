@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:44:06 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/16 08:09:00 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:25 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
+#include"../../push_swap.h"
 
 long long	ft_atoi_ll(const char *str)
 {

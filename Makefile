@@ -6,17 +6,17 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2022/01/06 21:41:42 by arudy            ###   ########.fr        #
+#    Updated: 2022/01/07 19:17:47 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c srcs/check_input.c \
-		srcs/check_input_utils.c srcs/create_ll_tab.c \
-		srcs/create_tab.c srcs/tab_is_sorted.c srcs/create_lst.c \
-		srcs/lst_utils.c srcs/operations/swap.c srcs/operations/push.c \
-		srcs/operations/rotate.c srcs/operations/reverse_rotate.c \
-		srcs/sort_index_lst.c srcs/sort/sort_short_lst.c srcs/sort/sort_utils.c \
-		srcs/sort/sort_long_lst.c
+SRCS =$(addprefix srcs/, parsing/check_input.c \
+		parsing/check_input_utils.c parsing/create_ll_tab.c \
+		parsing/create_tab.c parsing/tab_is_sorted.c parsing/create_lst.c \
+		parsing/lst_utils.c operations/swap.c operations/push.c \
+		operations/rotate.c operations/reverse_rotate.c \
+		parsing/sort_index_lst.c sort/sort_short_lst.c sort/sort_utils.c \
+		sort/sort_long_lst.c) main.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -39,14 +39,9 @@ ${NAME}:	${OBJS}
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-valgrind:	${OBJS}
-			@make -C libft
-			@${CC} -g3 ${OBJS} ${CFLAG} -o ${NAME} ${LIBFT}
-
 clean:
 		@make -C libft clean
 		${RM} ${OBJS}
-		${RM} a.out
 
 fclean:		clean
 			${RM} ${NAME}

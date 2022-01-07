@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/06 12:09:44 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:29 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 t_stack	*ft_lst_new(int content, void *prev)
 {

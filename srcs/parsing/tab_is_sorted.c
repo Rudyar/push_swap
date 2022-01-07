@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 17:37:52 by arudy             #+#    #+#             */
-/*   Updated: 2021/12/18 17:43:15 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:48 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	tab_is_sorted(t_tab *tab)
 {

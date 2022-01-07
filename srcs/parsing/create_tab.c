@@ -6,11 +6,11 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 07:28:41 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/04 21:39:08 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:27:33 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	check_double(long long *tab, int size)
 {
