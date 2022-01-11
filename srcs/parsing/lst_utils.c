@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 16:07:41 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/11 17:47:46 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	print_lst(t_stack **stack_a, t_stack **stack_b)
 	{
 		if (*a)
 		{
-			printf("| %d (%d)", (*a)->index, (*a)->binary_index);
+			printf("| %d (%s)", (*a)->index, (*a)->binary_index);
 			a = &(*a)->next;
 		}
 		else
@@ -99,7 +99,7 @@ void	print_lst(t_stack **stack_a, t_stack **stack_b)
 		printf(" | ");
 		if (*b)
 		{
-			printf("%d (%d) |", (*b)->index, (*b)->binary_index);
+			printf("%d (%s) |", (*b)->index, (*b)->binary_index);
 			b = &(*b)->next;
 		}
 		else

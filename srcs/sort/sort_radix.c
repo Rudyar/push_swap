@@ -6,21 +6,36 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:44:45 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 16:08:33 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/11 18:23:36 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	convert_to_binary(int index)
+char	*convert_to_binary(int index)
 {
-	int	ret;
+	int		i;
+	char	*base;
+	char	*dst;
 
-	ret = 0;
-	if (index > 1)
-		ret = convert_to_binary(index / 2);
-	ret = ret * 10 + index % 2;
-	return (ret);
+	i = 8;
+	base = "01";
+	dst = malloc(sizeof(char) * 10);
+	dst[9] = '\0';
+	while (index > 1)
+	{
+		dst[i] = base[index % 2];
+		index = index / 2;
+		i--;
+	}
+	dst[i] = base[index % 2];
+	i--;
+	while (i >= 0)
+	{
+		dst[i] = '0';
+		i--;
+	}
+	return (dst);
 }
 
 void	make_binary_index(t_stack **a)
@@ -32,37 +47,42 @@ void	make_binary_index(t_stack **a)
 	}
 }
 
-int	get_index_length_binary(t_stack **lst)
+int	still_zero_in_a(t_stack **lst, int i)
 {
-	t_stack	*tmp;
-	int		nbr;
-	int		size;
-
-	tmp = *lst;
-	nbr = 0;
-	size = 1;
 	while (*lst)
 	{
-		if ((*lst)->index > (*tmp).index)
-			tmp = *lst;
+		if ((*lst)->binary_index[i] == '0')
+			return (1);
 		lst = &(*lst)->next;
 	}
-	nbr = tmp->binary_index;
-	while (nbr > 1)
-	{
-		nbr = nbr / 10;
-		size++;
-	}
-	return (size);
+	return (0);
 }
 
 void	sort_radix(t_stack **a, t_stack **b)
 {
-	(void)b;
 	int	i;
 
-	i = 0;
+	i = 8;
 	make_binary_index(a);
-	i = get_index_length_binary(a);
-	(void)i;
+	while (i >= 0)
+	{
+		while ((*a))
+		{
+			if (!still_zero_in_a(a, i))
+				break ;
+			else if ((*a)->binary_index[i] == '0')
+			{
+				pb(a, b);
+			}
+			// else if ((*a)->next->binary_index[i] == '0')
+			// 	sa(a);
+			else
+				ra(a);
+		}
+		while (*b)
+		{
+			pa(b, a);
+		}
+	i--;
+	}
 }

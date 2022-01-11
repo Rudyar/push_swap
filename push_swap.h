@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 16:06:25 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/11 17:47:17 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	int				content;
 	int				index;
-	int				binary_index;
+	char			*binary_index;
 }t_stack;
 
 t_tab		*check_input(int ac, char **av);

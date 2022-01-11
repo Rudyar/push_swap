@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 16:09:05 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/11 18:22:07 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int ac, char **av)
 		sort_3_lst(&a, tab->size);
 	else if (tab->size <= 10)
 		sort_short_lst(&a, &b, tab->size);
+	else if (tab->size < 200)
+		sort_long_lst(&a, &b, tab->size);
 	else
 		sort_radix(&a, &b);
 	print_lst(&a, &b);
