@@ -6,7 +6,7 @@
 #    By: arudy <arudy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 14:56:55 by arudy             #+#    #+#              #
-#    Updated: 2022/01/07 19:17:47 by arudy            ###   ########.fr        #
+#    Updated: 2022/01/11 14:30:44 by arudy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS =$(addprefix srcs/, parsing/check_input.c \
 		parsing/lst_utils.c operations/swap.c operations/push.c \
 		operations/rotate.c operations/reverse_rotate.c \
 		parsing/sort_index_lst.c sort/sort_short_lst.c sort/sort_utils.c \
-		sort/sort_long_lst.c) main.c
+		sort/sort_long_lst.c sort/sort_radix.c) main.c
 
 OBJS = ${SRCS:.c=.o}
 
