@@ -6,16 +6,22 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:59 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/12 10:47:52 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 15:24:40 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_all(t_tab *tab, t_stack **a, t_stack **b)
+int	free_tab(t_tab *tab)
 {
 	free(tab->tab);
 	free(tab);
+	return (0);
+}
+
+void	free_all(t_tab *tab, t_stack **a, t_stack **b)
+{
+	free_tab(tab);
 	free_lst(a);
 	free_lst(b);
 }
@@ -32,7 +38,7 @@ int	main(int ac, char **av)
 	if (!tab)
 		return (ft_putstr_error("Error\n"));
 	if (tab_is_sorted(tab))
-		return (0);
+		return (free_tab(tab));
 	a = create_lst(tab);
 	b = NULL;
 	if (tab->size < 4)

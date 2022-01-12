@@ -6,11 +6,18 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/07 17:27:11 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 18:09:59 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+t_tab	*free_tab_tab(t_tab *tab, long long int *ll_tab)
+{
+	free(tab);
+	free(ll_tab);
+	return (0);
+}
 
 int	ft_putstr_error(char *s)
 {
@@ -47,4 +54,28 @@ t_tab	*init_tab(void)
 		return (0);
 	tab->size = 0;
 	return (tab);
+}
+
+int	check_sign(char **src)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (src[i])
+	{
+		j = 0;
+		while (src[i][j])
+		{
+			if ((src[i][j] == '+' && !ft_isdigit(src[i][j + 1])) ||
+				(src[i][j] == '-' && !ft_isdigit(src[i][j + 1])))
+			{
+				printf("%c | %c\n", src[j][i], src[i][j + 1]);
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }

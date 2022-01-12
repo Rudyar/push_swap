@@ -6,11 +6,17 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/07 17:27:20 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 18:10:23 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+char	**free_char_input(char **src)
+{
+	ft_free(src);
+	return (NULL);
+}
 
 int	first_check(char *s)
 {
@@ -22,6 +28,9 @@ int	first_check(char *s)
 	while (s && s[i])
 	{
 		if (ft_isdigit(s[i]) && s[i] != ' ' && s[i] != '+' && s[i] != '-')
+			return (0);
+		else if ((s[i] == '+' && ft_isdigit(s[i + 1]))
+			|| (s[i] == '-' && ft_isdigit(s[i + 1])))
 			return (0);
 		i++;
 	}
@@ -70,7 +79,7 @@ char	**split_input(int ac, char **av)
 	while (i < ac)
 	{
 		if (!(first_check(av[i])))
-			return (NULL);
+			return (free_char_input(input_splited));
 		input_splited = ft_strjoin_strs(input_splited, ft_split(av[i], ' '));
 		i++;
 	}
@@ -92,10 +101,14 @@ t_tab	*check_input(int ac, char **av)
 	tab->size = tab_size(input_splited);
 	ll_tab = create_ll_tab(input_splited);
 	if (!ll_tab)
+	{
+		ft_free(input_splited);
+		free(tab);
 		return (0);
+	}
 	ft_free(input_splited);
 	tab->tab = create_tab(ll_tab, tab->size);
 	if (!tab->tab)
-		return (0);
+		return (free_tab_tab(tab, ll_tab));
 	return (tab);
 }

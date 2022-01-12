@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/12 10:17:46 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 18:10:13 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int			tab_size(char **tab);
 int			tab_is_sorted(t_tab *tab);
 int			*create_tab(long long *ll_tab, int size);
 int			ft_putstr_error(char *s);
+int			check_sign(char **src);
 void		ft_free(char **strs);
+t_tab		*free_tab_tab(t_tab *tab, long long int *ll_tab);
 void		free_lst(t_stack **lst);
 void		print_lst(t_stack **a, t_stack **b);
 void		sort_index_lst(t_stack **lst, int max);
