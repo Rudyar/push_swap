@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 15:02:46 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 17:47:46 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 10:54:47 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,34 +77,34 @@ t_stack	*find_smallest(t_stack **lst)
 	return (tmp);
 }
 
-void	print_lst(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	**a;
-	t_stack	**b;
+// void	print_lst(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	t_stack	**a;
+// 	t_stack	**b;
 
-	a = stack_a;
-	b = stack_b;
-	printf("\n-------------------\n");
-	printf("|    a   |    b   |\n");
-	printf("-------------------\n");
-	while (*a != NULL || *b != NULL)
-	{
-		if (*a)
-		{
-			printf("| %d (%s)", (*a)->index, (*a)->binary_index);
-			a = &(*a)->next;
-		}
-		else
-			printf("|  ");
-		printf(" | ");
-		if (*b)
-		{
-			printf("%d (%s) |", (*b)->index, (*b)->binary_index);
-			b = &(*b)->next;
-		}
-		else
-			printf("  |");
-		printf("\n");
-	}
-	printf("-------------------\n\n");
-}
+// 	a = stack_a;
+// 	b = stack_b;
+// 	printf("\n-------------------\n");
+// 	printf("|    a   |    b   |\n");
+// 	printf("-------------------\n");
+// 	while (*a != NULL || *b != NULL)
+// 	{
+// 		if (*a)
+// 		{
+// 			printf("| %d (%d)", (*a)->content, (*a)->index);
+// 			a = &(*a)->next;
+// 		}
+// 		else
+// 			printf("|  ");
+// 		printf(" | ");
+// 		if (*b)
+// 		{
+// 			printf("%d (%d) |", (*b)->content, (*b)->index);
+// 			b = &(*b)->next;
+// 		}
+// 		else
+// 			printf("  |");
+// 		printf("\n");
+// 	}
+// 	printf("-------------------\n\n");
+// }

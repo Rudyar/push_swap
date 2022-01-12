@@ -6,83 +6,37 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:44:45 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 18:23:36 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 10:55:01 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-char	*convert_to_binary(int index)
+void	sort_radix(t_stack **a, t_stack **b, int size)
 {
-	int		i;
-	char	*base;
-	char	*dst;
-
-	i = 8;
-	base = "01";
-	dst = malloc(sizeof(char) * 10);
-	dst[9] = '\0';
-	while (index > 1)
-	{
-		dst[i] = base[index % 2];
-		index = index / 2;
-		i--;
-	}
-	dst[i] = base[index % 2];
-	i--;
-	while (i >= 0)
-	{
-		dst[i] = '0';
-		i--;
-	}
-	return (dst);
-}
-
-void	make_binary_index(t_stack **a)
-{
-	while (*a)
-	{
-		(*a)->binary_index = convert_to_binary((*a)->index);
-		a = &(*a)->next;
-	}
-}
-
-int	still_zero_in_a(t_stack **lst, int i)
-{
-	while (*lst)
-	{
-		if ((*lst)->binary_index[i] == '0')
-			return (1);
-		lst = &(*lst)->next;
-	}
-	return (0);
-}
-
-void	sort_radix(t_stack **a, t_stack **b)
-{
+	int	max_bit;
+	int	max_size;
 	int	i;
+	int	j;
 
-	i = 8;
-	make_binary_index(a);
-	while (i >= 0)
+	max_bit = 0;
+	max_size = size -1;
+	i = 0;
+	while ((max_size >> max_bit) != 0)
+		max_bit++;
+	while (i < max_bit)
 	{
-		while ((*a))
+		j = 0;
+		while ((j < size))
 		{
-			if (!still_zero_in_a(a, i))
-				break ;
-			else if ((*a)->binary_index[i] == '0')
-			{
-				pb(a, b);
-			}
-			// else if ((*a)->next->binary_index[i] == '0')
-			// 	sa(a);
-			else
+			if ((((*a)->index >> i) & 1) == 1)
 				ra(a);
+			else
+				pb(a, b);
+			j++;
 		}
 		while (*b)
-		{
 			pa(b, a);
-		}
-	i--;
+		i++;
 	}
 }

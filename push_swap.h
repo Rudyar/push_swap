@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:24 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 17:47:17 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 10:17:46 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	int				content;
 	int				index;
-	char			*binary_index;
 }t_stack;
 
 t_tab		*check_input(int ac, char **av);
@@ -59,7 +58,7 @@ void		rrr(t_stack **a, t_stack **b);
 void		sort_long_lst(t_stack **a, t_stack **b, int size);
 void		sort_short_lst(t_stack **a, t_stack **b, int size);
 void		sort_3_lst(t_stack **a, int size);
-void		sort_radix(t_stack **a, t_stack **b);
+void		sort_radix(t_stack **a, t_stack **b, int size);
 int			a_is_sorted(t_stack **a);
 int			is_in_second_part(t_stack **lst, int index);
 int			is_in_first_part(t_stack **lst, int start, int end);

@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:51:34 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/11 17:47:28 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/12 10:17:51 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*ft_lst_new(int content, void *prev)
 	new->prev = prev;
 	new->next = NULL;
 	new->index = -1;
-	new->binary_index = NULL;
 	return (new);
 }
 
