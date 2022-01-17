@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:44:06 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/12 17:59:36 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/17 10:56:53 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ long long	ft_atoi_ll(const char *str)
 	i = 0;
 	sign = 1;
 	n = 0;
-	if (ft_strlen(str) > 11)
-		return (0);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -42,8 +40,6 @@ long long	ft_atoi_ll(const char *str)
 		n = n * 10 + str[i] - '0';
 		i++;
 	}
-	if (str[i] != '\0')
-		return (0);
 	return (n * sign);
 }
 
@@ -59,8 +55,6 @@ long long int	*create_ll_tab(char **src)
 	while (src[i] != NULL)
 	{
 		tab[i] = ft_atoi_ll(src[i]);
-		if (!tab[i])
-			return (free_ll_tab(tab));
 		i++;
 	}
 	return (tab);

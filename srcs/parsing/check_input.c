@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/12 18:10:23 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/17 11:01:29 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	first_check(char *s)
 			return (0);
 		else if ((s[i] == '+' && ft_isdigit(s[i + 1]))
 			|| (s[i] == '-' && ft_isdigit(s[i + 1])))
+			return (0);
+		else if (ft_strlen(s) >= 11)
 			return (0);
 		i++;
 	}

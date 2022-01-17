@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 12:03:03 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/12 18:09:59 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/17 11:04:34 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	check_sign(char **src)
 			if ((src[i][j] == '+' && !ft_isdigit(src[i][j + 1])) ||
 				(src[i][j] == '-' && !ft_isdigit(src[i][j + 1])))
 			{
-				printf("%c | %c\n", src[j][i], src[i][j + 1]);
 				return (0);
 			}
 			j++;
