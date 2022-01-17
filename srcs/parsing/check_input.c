@@ -6,16 +6,36 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/17 11:01:29 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/17 17:40:27 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-char	**free_char_input(char **src)
+int	check_sign(char **s)
 {
-	ft_free(src);
-	return (NULL);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (s[i] != NULL)
+	{
+		j = 0;
+		if (ft_strlen(s[i]) > 11)
+			return (0);
+		if (s[i][j] == '\0')
+			return (0);
+		if (s[i][j] == '+' || s[i][j] == '-')
+			j++;
+		if (ft_isdigit(s[i][j]) != 0)
+			return (0);
+		while (ft_isdigit(s[i][j]) == 0)
+			j++;
+		if (s[i][j] != '\0')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	first_check(char *s)
@@ -23,16 +43,13 @@ int	first_check(char *s)
 	int	i;
 
 	i = 0;
-	if (s[i] == '\0')
-		return (1);
-	while (s && s[i])
+	while (s[i])
 	{
-		if (ft_isdigit(s[i]) && s[i] != ' ' && s[i] != '+' && s[i] != '-')
+		if (ft_isdigit(s[i]) != 0 && s[i] != ' ' && s[i] != '+' && s[i] != '-')
 			return (0);
-		else if ((s[i] == '+' && ft_isdigit(s[i + 1]))
-			|| (s[i] == '-' && ft_isdigit(s[i + 1])))
+		else if (s[i] == '+' && ft_isdigit(s[i + 1]) != 0)
 			return (0);
-		else if (ft_strlen(s) >= 11)
+		else if (s[i] == '-' && ft_isdigit(s[i + 1]) != 0)
 			return (0);
 		i++;
 	}
@@ -74,24 +91,30 @@ char	**split_input(int ac, char **av)
 	char		**input_splited;
 
 	i = 1;
+	while (i < ac)
+	{
+		if (first_check(av[i]) == 0)
+			return (NULL);
+		i++;
+	}
 	input_splited = malloc(sizeof(char *) * 1);
 	if (!input_splited)
 		return (NULL);
 	input_splited[0] = NULL;
+	i = 1;
 	while (i < ac)
 	{
-		if (!(first_check(av[i])))
-			return (free_char_input(input_splited));
 		input_splited = ft_strjoin_strs(input_splited, ft_split(av[i], ' '));
 		i++;
 	}
+	if (!check_sign(input_splited))
+		return (ft_free_input(input_splited));
 	return (input_splited);
 }
 
 t_tab	*check_input(int ac, char **av)
 {
 	char		**input_splited;
-	long long	*ll_tab;
 	t_tab		*tab;
 
 	input_splited = split_input(ac, av);
@@ -101,16 +124,12 @@ t_tab	*check_input(int ac, char **av)
 	if (!tab)
 		return (0);
 	tab->size = tab_size(input_splited);
-	ll_tab = create_ll_tab(input_splited);
-	if (!ll_tab)
+	tab->tab = create_tab(input_splited, tab->size);
+	ft_free(input_splited);
+	if (!tab->tab)
 	{
-		ft_free(input_splited);
-		free(tab);
+		free(tab->tab);
 		return (0);
 	}
-	ft_free(input_splited);
-	tab->tab = create_tab(ll_tab, tab->size);
-	if (!tab->tab)
-		return (free_tab_tab(tab, ll_tab));
 	return (tab);
 }

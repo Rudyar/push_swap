@@ -6,13 +6,19 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 07:28:41 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/07 17:27:33 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/17 16:03:02 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	check_double(long long *tab, int size)
+int	*ft_free_tab(int *tab)
+{
+	free(tab);
+	return (0);
+}
+
+int	check_double(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -32,36 +38,64 @@ int	check_double(long long *tab, int size)
 	return (1);
 }
 
-int	is_not_int(long long *tab, int size)
+long long	ft_atoll(char *str)
 {
-	int	i;
+	int			i;
+	long long	n;
 
 	i = 0;
-	while (i < size)
+	n = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (tab[i] > 2147483647 || tab[i] < -2147483648)
+		n = n * 10 + str[i] - '0';
+		i++;
+	}
+	return (n);
+}
+
+int	is_not_int(char	**input)
+{
+	int			i;
+	int			int_max;
+	long long	res;
+
+	i = 0;
+	int_max = 2147483647;
+	res = 0;
+	while (input[i] != NULL)
+	{
+		res = ft_atoll(input[i]);
+		if (input[i][0] == '-' && (res - 1) > int_max)
+			return (0);
+		else if (input[i][0] != '-' && res > int_max)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	*create_tab(long long *ll_tab, int size)
+int	*create_tab(char **input, int size)
 {
 	int	i;
 	int	*tab;
 
 	i = 0;
-	if (!(check_double(ll_tab, size)) || !(is_not_int(ll_tab, size)))
+	if (is_not_int(input) == 0)
 		return (0);
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (0);
-	while (i < size)
+	while (input[i] != NULL)
 	{
-		tab[i] = ll_tab[i];
+		tab[i] = ft_atoi(input[i]);
 		i++;
 	}
-	free(ll_tab);
+	if (!check_double(tab, size))
+	{
+		free(tab);
+		return (0);
+	}
 	return (tab);
 }
