@@ -6,7 +6,7 @@
 /*   By: arudy <arudy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 20:31:53 by arudy             #+#    #+#             */
-/*   Updated: 2022/01/17 17:40:27 by arudy            ###   ########.fr       */
+/*   Updated: 2022/01/18 10:00:12 by arudy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ t_tab	*check_input(int ac, char **av)
 	if (!tab->tab)
 	{
 		free(tab->tab);
+		free(tab);
 		return (0);
 	}
 	return (tab);
